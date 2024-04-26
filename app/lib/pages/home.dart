@@ -1,4 +1,5 @@
-
+import 'package:app/components/es_container.dart';
+import 'package:app/components/es_menu.dart';
 import 'package:app/pages/cadastro_clientes_page.dart';
 import 'package:flutter/material.dart';
 
@@ -19,39 +20,8 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed('/clientes');
-              },
-              child: const Text('Cadastro de Clientes')
-            ),
-            const SizedBox(height: 20,),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed('/tiposservicos');
-              },
-              child: const Text('Cadastro de Tipos de Serviços')
-            ),
-            const SizedBox(height: 20,),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed('/realizarservico');
-              },
-              child: const Text('Realizar serviço')
-            ),
-            const SizedBox(height: 20,),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed('/servicosrealizados');
-              },
-              child: const Text('Serviços Realizados')
-            )
-          ],
-        ),
+      body: ESContainer(
+        widgets: [ESmenu()],
       ),
     );
   }
